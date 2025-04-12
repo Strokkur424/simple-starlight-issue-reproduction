@@ -1,0 +1,16 @@
+---
+import type { GetStaticPaths } from "astro";
+import ContentComponent from "../components/content_component.astro";
+import { content } from "../components/content.ts";
+
+export function getStaticPaths() {
+    return content.staticPaths.map((path) => {
+        params: {
+            id: path;
+        }
+        props: path;
+    });
+}
+---
+
+<ContentComponent />
